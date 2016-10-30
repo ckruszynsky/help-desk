@@ -1,0 +1,11 @@
+Last time spot : 29:31
+
+Links
+http://www.bluespire.com/downloads/intermediateaurelia/resources.zip  
+https://gitter.im/2016-08-aurelia-workshop/lobby
+
+Things to try
+* track a session for automatic logins, get cookie, set user instance, change root of application.
+
+
+* aurelia.setRoot() --> uses the convention of app.js & app.html to bootstrap the application. You can override this convention.
