@@ -47,62 +47,6 @@ define('main',['exports', './environment'], function (exports, _environment) {
     });
   }
 });
-define('login/login',['exports', 'aurelia-dependency-injection', 'aurelia-framework', 'backend/server'], function (exports, _aureliaDependencyInjection, _aureliaFramework, _server) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Login = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _class;
-
-  var Login = exports.Login = (_dec = (0, _aureliaDependencyInjection.inject)(_aureliaFramework.Aurelia, _server.Server), _dec(_class = function () {
-    function Login(aurelia, server) {
-      _classCallCheck(this, Login);
-
-      this.aurelia = aurelia;
-      this.server = server;
-      this.username = '';
-      this.password = '';
-      this.message = '';
-    }
-
-    Login.prototype.login = function login() {
-      var _this = this;
-
-      this.server.login(this.username, this.password).then(function (result) {
-        if (result) {
-          _this.message = '';
-
-          _this.aurelia.use.instance(_server.User, result);
-
-          _this.aurelia.setRoot('shell/shell');
-        } else {
-
-          _this.message = 'Incorrect Username or Password!';
-        }
-      });
-    };
-
-    return Login;
-  }()) || _class);
-});
-define('resources/index',["exports"], function (exports) {
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.configure = configure;
-  function configure(config) {}
-});
 define('backend/lorem',['exports'], function (exports) {
   'use strict';
 
@@ -485,6 +429,62 @@ define('backend/server',['exports', './lorem'], function (exports, _lorem) {
     return Server;
   }();
 });
+define('login/login',['exports', 'aurelia-dependency-injection', 'aurelia-framework', 'backend/server'], function (exports, _aureliaDependencyInjection, _aureliaFramework, _server) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Login = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _class;
+
+  var Login = exports.Login = (_dec = (0, _aureliaDependencyInjection.inject)(_aureliaFramework.Aurelia, _server.Server), _dec(_class = function () {
+    function Login(aurelia, server) {
+      _classCallCheck(this, Login);
+
+      this.aurelia = aurelia;
+      this.server = server;
+      this.username = '';
+      this.password = '';
+      this.message = '';
+    }
+
+    Login.prototype.login = function login() {
+      var _this = this;
+
+      this.server.login(this.username, this.password).then(function (result) {
+        if (result) {
+          _this.message = '';
+
+          _this.aurelia.use.instance(_server.User, result);
+
+          _this.aurelia.setRoot('shell/shell');
+        } else {
+
+          _this.message = 'Incorrect Username or Password!';
+        }
+      });
+    };
+
+    return Login;
+  }()) || _class);
+});
+define('resources/index',["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.configure = configure;
+  function configure(config) {}
+});
 define('shell/routes',['exports'], function (exports) {
   'use strict';
 
@@ -567,6 +567,26 @@ define('shell/shell',['exports', 'aurelia-framework', 'backend/server', './route
     return Shell;
   }()) || _class);
 });
-define('text!login/login.html', ['module'], function(module) { module.exports = "<template>\n  <div class=\"login\">\n    <div class=\"row\">\n      <div class=\"col-md-4 col-md-offset-4 logo\"></div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-md-4 col-md-offset-4 well\">\n        <div class=\"alert alert-danger\" show.bind=\"message\">\n            ${message}\n        </div>\n        <form role=\"form\" class=\"form-horizontal\" submit.trigger=\"login()\">\n          <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">Username</label>\n            <div class=\"col-sm-10\">\n              <input type=\"text\" value.bind=\"username\" class=\"form-control\" placeholder=\"username\">\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <label class=\"col-sm-2 control-label\">Password</label>\n            <div class=\"col-sm-10\">\n              <input type=\"password\" value.bind=\"password\" class=\"form-control\" placeholder=\"password\">\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <div class=\"col-sm-offset-2 col-sm-10 text-right\">              \n              <button type=\"submit\" class=\"btn btn-success\" disabled.bind=\"!username || !password\" >Log In</button>\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</template>\n"; });
-define('text!shell/shell.html', ['module'], function(module) { module.exports = "<template>\n  <div class=\"page-host\">\n    <router-view></router-view>\n  </div>\n</template>\n"; });
+define('home/home',["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var Home = exports.Home = function Home() {
+    _classCallCheck(this, Home);
+  };
+});
+define('text!login/login.html', ['module'], function(module) { module.exports = "<template>\r\n  <div class=\"login\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-4 logo\"></div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col-md-4 col-md-offset-4 well\">\r\n        <div class=\"alert alert-danger\" show.bind=\"message\">\r\n            ${message}\r\n        </div>\r\n        <form role=\"form\" class=\"form-horizontal\" submit.trigger=\"login()\">\r\n          <div class=\"form-group\">\r\n            <label class=\"col-sm-2 control-label\">Username</label>\r\n            <div class=\"col-sm-10\">\r\n              <input type=\"text\" value.bind=\"username\" class=\"form-control\" placeholder=\"username\">\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label class=\"col-sm-2 control-label\">Password</label>\r\n            <div class=\"col-sm-10\">\r\n              <input type=\"password\" value.bind=\"password\" class=\"form-control\" placeholder=\"password\">\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <div class=\"col-sm-offset-2 col-sm-10 text-right\">              \r\n              <button type=\"submit\" class=\"btn btn-success\" disabled.bind=\"!username || !password\" >Log In</button>\r\n            </div>\r\n          </div>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n"; });
+define('text!shell/shell.html', ['module'], function(module) { module.exports = "<template>\r\n  <compose view=\"./sidebar.html\"></compose>\r\n  <compose view=\"./header.html\"></compose>\r\n  <div class=\"page-host\">\r\n    <router-view></router-view>\r\n  </div>\r\n</template>\r\n"; });
+define('text!home/home.html', ['module'], function(module) { module.exports = "<template>\r\n  Home Screen Placeholder\r\n</template>\r\n"; });
+define('text!shell/sidebar.html', ['module'], function(module) { module.exports = "<template>\r\n  <div class=\"main-nav\">\r\n    <ul class=\"nav nav-list\">\r\n      <li repeat.for=\"item of router.navigation\" class=\"${item.isActive ? 'active' : ''}\"> <!--One li per item in router.navigation; apply the active class if items.isActive-->\r\n        <a href.bind=\"item.href\"> <!--Bind the href to item.href-->\r\n          <i class=\"fa ${item.settings.iconClass}\"></i> <!--Add the icon class based on settings.-->\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</template>\r\n"; });
+define('text!shell/header.html', ['module'], function(module) { module.exports = "<template>\r\n  <nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\r\n    <ul class=\"nav navbar-nav tabs\">\r\n      <!--TODO: Add Tabs UI-->\r\n      <li class=\"dropdown add\">\r\n        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\r\n          <i class=\"fa fa-plus\"></i>add\r\n        </a>\r\n        <ul class=\"dropdown-menu\">\r\n          <li>\r\n            <a route-href=\"route: thread; params.bind: { id:'new' }\"><i class=\"icon-ticket\"></i> New Ticket</a>\r\n          </li>\r\n          <li>\r\n            <a route-href=\"route: user; params.bind: { id:'new' }\"><i class=\"icon-group\"></i> New User</a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"nav navbar-nav navbar-right\">\r\n      <li class=\"dropdown\">\r\n        <a href=\"#\" class=\"avatar dropdown-toggle\" data-toggle=\"dropdown\">\r\n          <img src=\"${user.iconUrl}\" title.bind=\"user.username\">\r\n          <b class=\"caret\"></b>\r\n        </a>\r\n        <ul class=\"dropdown-menu\" role=\"menu\">\r\n          <li role=\"presentation\">\r\n            <a route-href=\"route: settings\"><i class=\"fa fa-cog\"></i> Settings</a>\r\n          </li>\r\n          <li role=\"presentation\">\r\n            <a route-href=\"route: help\"><i class=\"fa fa-envelope\"></i> Help</a>\r\n          </li>\r\n          <li role=\"presentation\" class=\"divider\"></li>\r\n          <li role=\"presentation\">\r\n            <a href=\"#\" click.trigger=\"logout()\"><i class=\"fa fa-power-off\"></i> Logout</a>\r\n          </li>\r\n        </ul>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</template>"; });
 //# sourceMappingURL=app-bundle.js.map

@@ -1,4 +1,4 @@
-Last time spot : 29:31
+Last time spot : 46:01
 
 Links
 http://www.bluespire.com/downloads/intermediateaurelia/resources.zip  
@@ -9,3 +9,10 @@ Things to try
 
 
 * aurelia.setRoot() --> uses the convention of app.js & app.html to bootstrap the application. You can override this convention.
+
+* compose --> dynamically creates or composes views or viewModels. 
+         * when only providing a view, the html becomes inlined into the view
+         * when using without specifying a viewModel; you will be bound against the same viewModel that the view is being referenced in. 
+         * allows you to break the view into small composable pieces
+
+
