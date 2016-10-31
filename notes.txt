@@ -24,3 +24,5 @@ Things to try
 
 *bonus* --> inject user into dateValueConverter and read the user date preference and use that as the default format.
 
+* creating reusable components like the dialog plugin
+* attach-focus ??

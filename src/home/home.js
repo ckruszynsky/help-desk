@@ -1,12 +1,14 @@
 import {inject} from 'aurelia-framework';
 import {Server} from 'backend/server';
+import {CommonDialogs} from '../resources/dialogs/common-dialogs';
 
-@inject(Server)
+@inject(Server,CommonDialogs)
 export class Home {
-  constructor(server){
+  constructor(server,commonDialogs){
     this.server = server;
     this.activity = null;
     this.news = null;
+    this.commonDialogs = commonDialogs;   
   }
 
   activate() {

@@ -1,20 +1,19 @@
-<template bindable="news" class="news">    
-
-  <template repeat.for="item of news">
-    <h1>${item.title}</h1>
-    <p>${item.content}</p>
-    <div>
-      <span class="badge badge-success">
+<template bindable="news" class="news">
+	<template repeat.for="item of news">
+		<h1>${item.title}</h1>
+		<p>${item.content}</p>
+		<div>
+			<span class="badge badge-success">
           ${item.createdAt | date}
         </span>
-      <div class="pull-right">           
-        <template repeat.for="tag of item.tags">
-        <span class="badge">
+			<div class="pull-right">
+				<template repeat.for="tag of item.tags">
+					<span class="badge">
           ${tag}
         </span>
-        </template>
-      </div>
-    </div>
-    <hr>
-  </template>
+				</template>
+			</div>
+		</div>
+		<hr>
+	</template>
 </template>

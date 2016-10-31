@@ -11,6 +11,7 @@ Promise.config({
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
+    .plugin('aurelia-dialog')
     .feature('resources');
 
   if (environment.debug) {
@@ -20,6 +21,6 @@ export function configure(aurelia) {
   if (environment.testing) {
     aurelia.use.plugin('aurelia-testing');
   }
-
+  
   aurelia.start().then(() => aurelia.setRoot('login/login'));
 }
