@@ -16,3 +16,11 @@ Things to try
          * allows you to break the view into small composable pieces
 
 
+* canActivate, canDeactivate
+* valueConverters, globalResources, features (configuration)
+* plugins
+* requires in html
+* when using valueConverters in a expression you must use lower Pascal casing when referencing the value converter.
+
+*bonus* --> inject user into dateValueConverter and read the user date preference and use that as the default format.
+
