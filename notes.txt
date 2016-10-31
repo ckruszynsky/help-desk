@@ -26,3 +26,7 @@ Things to try
 
 * creating reusable components like the dialog plugin
 * attach-focus ??
+* router.navigateToRoute - replace, trigger
+* eventAggregator pub / sub
+* route-href
+
