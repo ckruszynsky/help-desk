@@ -1,4 +1,4 @@
-Last time spot : 1:21:03
+Last time spot : part 2.
 
 Links
 http://www.bluespire.com/downloads/intermediateaurelia/resources.zip  
@@ -29,4 +29,13 @@ Things to try
 * router.navigateToRoute - replace, trigger
 * eventAggregator pub / sub
 * route-href
+* binding behaviors
+* creating elements
+* TaskQueue - Manages async tasks (micro & macro tasks)
+* ProcessContent - custom elements 
+* Slots
+* children - aurelia-framework --watches child elements of a element and syncs it.
+* ref attributes
+* for chart example to remove duplication of code you could use the @useView decorator and create a "chart.html" for both the line and bar charts
+
 
