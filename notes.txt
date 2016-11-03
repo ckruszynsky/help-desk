@@ -1,7 +1,7 @@
 Last time spot : part 2.
 
 Links
-http://www.bluespire.com/downloads/intermediateaurelia/resources.zip  
+http://www.bluespire.com/downloads/intermediateaurelia/resources.zip
 https://gitter.im/2016-08-aurelia-workshop/lobby
 
 Things to try
@@ -10,9 +10,9 @@ Things to try
 
 * aurelia.setRoot() --> uses the convention of app.js & app.html to bootstrap the application. You can override this convention.
 
-* compose --> dynamically creates or composes views or viewModels. 
+* compose --> dynamically creates or composes views or viewModels.
          * when only providing a view, the html becomes inlined into the view
-         * when using without specifying a viewModel; you will be bound against the same viewModel that the view is being referenced in. 
+         * when using without specifying a viewModel; you will be bound against the same viewModel that the view is being referenced in.
          * allows you to break the view into small composable pieces
 
 
@@ -32,10 +32,12 @@ Things to try
 * binding behaviors
 * creating elements
 * TaskQueue - Manages async tasks (micro & macro tasks)
-* ProcessContent - custom elements 
+* ProcessContent - custom elements
 * Slots
 * children - aurelia-framework --watches child elements of a element and syncs it.
 * ref attributes
 * for chart example to remove duplication of code you could use the @useView decorator and create a "chart.html" for both the line and bar charts
+* using decorators.
+
 
 
