@@ -39,5 +39,5 @@ export default [
     name: 'help',
     route: 'help',
     moduleId: 'help/help'
-  }
+  }  
 ];

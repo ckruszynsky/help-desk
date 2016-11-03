@@ -38,6 +38,6 @@ Things to try
 * ref attributes
 * for chart example to remove duplication of code you could use the @useView decorator and create a "chart.html" for both the line and bar charts
 * using decorators.
-
-
+* custom renderers
+* computed from decorator
 
